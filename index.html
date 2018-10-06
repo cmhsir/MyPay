@@ -8,13 +8,16 @@
    return navigator.userAgent;
   }
   alipayURL="https://qr.alipay.com/tsx042889qbo7rrg9z7ub3e";//从支付宝收款二维码里得到的URL
-  wechat = "MicroMessenger";
+   wechatURL="https://payapp.weixin.qq.com/qrpay/order/home2?key=idc_CHNDVI_vzdmbTNZIWPfpvEDlZisHw--";
+     
+   wechat = "MicroMessenger";
   alipay = "AlipayClient";
   userAgent = getUA();
   if(userAgent.indexOf(wechat)!=-1){
    //微信
-   window.location.href="static/wechat.png"
-  }else if(userAgent.indexOf(alipay)!=-1){
+   //window.location.href="static/wechat.png";
+ window.location.href=wechatURL; 
+}else if(userAgent.indexOf(alipay)!=-1){
    //支付宝
    window.location.href=alipayURL;
   }else{
