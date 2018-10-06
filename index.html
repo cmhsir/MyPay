@@ -8,15 +8,14 @@
    return navigator.userAgent;
   }
   alipayURL="https://qr.alipay.com/tsx042889qbo7rrg9z7ub3e";//从支付宝收款二维码里得到的URL
-   wechatURL="https://payapp.weixin.qq.com/qrpay/order/home2?key=idc_CHNDVI_vzdmbTNZIWPfpvEDlZisHw--";
-     
-   wechat = "MicroMessenger";
+  //wechatURL="https://payapp.weixin.qq.com/qrpay/order/home2?key=idc_CHNDVI_vzdmbTNZIWPfpvEDlZisHw--";//无法直接使用微信链接
+  wechat = "MicroMessenger";
   alipay = "AlipayClient";
   userAgent = getUA();
   if(userAgent.indexOf(wechat)!=-1){
    //微信
-   //window.location.href="static/wechat.png";
- window.location.href=wechatURL; 
+   window.location.href="wechat.png";
+   //window.location.href=wechatURL; 
 }else if(userAgent.indexOf(alipay)!=-1){
    //支付宝
    window.location.href=alipayURL;
@@ -28,10 +27,10 @@
   <div id="container">
    <h1>详细信息</h1>
    <h3>如果遇到了问题，请将此页面截屏发送给开发者</h3>
-   <p>邮箱:senventise@gmail.com</p>
+   <p>邮箱:cmhsir@gmail.com</p>
    <div id="ua"><p>UA:</p></div> 
    <duv id="link"><p>URL:</p></div>
-   <p>版本:2.1</p>
+   <p>版本：1.0</p>
    <script>
     document.getElementById("link").innerHTML = "URL:"+ window.location.href
     document.getElementById("ua").innerHTML=("UA:"+navigator.userAgent);
