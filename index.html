@@ -1,9 +1,8 @@
 <html>
  <head>
   <title id="title">跳转中......</title>
- </head>
- <body bgclolor="#ffffff"> 
-  <body>
+ </head> 
+ <body bgclolor="#ffffff">
   <script>
   function getUA(){
    return navigator.userAgent;
@@ -15,7 +14,7 @@
   userAgent = getUA();
   if(userAgent.indexOf(wechat)!=-1){
    //微信
-   //window.location.href="wechat.jpg";
+   window.location.href="wechat.jpg";
    //window.location.href=wechatURL; 
 }else if(userAgent.indexOf(alipay)!=-1){
    //支付宝
