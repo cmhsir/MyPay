@@ -2,7 +2,7 @@
  <head>
   <title id="title">跳转中......</title>
  </head> 
- <body bgclolor="#ffffff">
+ <body>
   <script>
   function getUA(){
    return navigator.userAgent;
@@ -14,9 +14,9 @@
   userAgent = getUA();
   if(userAgent.indexOf(wechat)!=-1){
    //微信
-   window.location.href="wechat.jpg";
+   window.location.href="wechat.html";
    //<img src="wechat.jpg" alt="晖哥百货微信收款码" title="晖哥百货微信收款码" />   
-   alt="晖哥百货微信收款码"; title="晖哥百货微信收款码";
+   //alt="晖哥百货微信收款码"; title="晖哥百货微信收款码";
    //window.location.href=wechatURL; 
 }else if(userAgent.indexOf(alipay)!=-1){
    //支付宝
