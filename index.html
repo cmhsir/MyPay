@@ -13,21 +13,26 @@
   qq = "QQ/";
   alipay = "AlipayClient";
   hebao = "hebao";
+  jd = "jdPay";
   userAgent = getUA();
   if(userAgent.indexOf(wechat)!=-1){
    //微信
    window.location.href="wechat.html";
-   //<img src="wechat.jpg" alt="晖哥百货微信收款码" title="晖哥百货微信收款码" />   
-   //alt="晖哥百货微信收款码"; title="晖哥百货微信收款码";
-   //window.location.href=wechatURL; 
-}else if(userAgent.indexOf(alipay)!=-1){
+  }else if(userAgent.indexOf(alipay)!=-1){
    //支付宝
    window.location.href=alipayURL;
   }else if(userAgent.indexOf(qq)!=-1){
    //QQ
-   window.location.href=alipayURL;}else{
-   //不是支付宝或微信中的一个
-   alert("无法识别的客户端！请在微信或支付宝内打开！");
+   window.location.href="qq.html";
+  }else if(userAgent.indexOf(hebao)!=-1){
+   //和包
+   window.location.href=hebaoURL;
+  }else if(userAgent.indexOf(jd)!=-1){
+   //京东
+   window.location.href=jdURL;
+  }else{
+   //不是其中的一种 
+   alert("无法识别的客户端！请在微信或支付宝内打开！");
   }
 </script>
   <div id="container">
