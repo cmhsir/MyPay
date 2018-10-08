@@ -9,9 +9,11 @@
   }
   alipayURL="https://qr.alipay.com/tsx042889qbo7rrg9z7ub3e";//从支付宝收款二维码里得到的URL
   //wechatURL="https://payapp.weixin.qq.com/qrpay/order/home2?key=idc_CHNDVI_vzdmbTNZIWPfpvEDlZisHw--";//无法直接使用微信链接
-  wechat = "MicroMessenger";
-  alipay = "AlipayClient";
-  userAgent = getUA();
+  wechat = "MicroMessenger/";
+  qq = "QQ/";
+  alipay = "AlipayClient";
+  hebao = "hebao";
+  userAgent = getUA();
   if(userAgent.indexOf(wechat)!=-1){
    //微信
    window.location.href="wechat.html";
@@ -21,7 +23,9 @@
 }else if(userAgent.indexOf(alipay)!=-1){
    //支付宝
    window.location.href=alipayURL;
-  }else{
+  }else if(userAgent.indexOf(qq)!=-1){
+   //QQ
+   window.location.href=alipayURL;}else{
    //不是支付宝或微信中的一个
    alert("无法识别的客户端！请在微信或支付宝内打开！");
   }
