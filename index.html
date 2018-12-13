@@ -7,8 +7,10 @@
 			function getUA(){
 				return navigator.userAgent;//获取app标识
 			}
-			function getdata(){
-				return getSeconds();
+			function getTime(){
+				var date = new Date();
+				var s = date.getSeconds();
+				return s;
 			}
 			alipayURL="https://qr.alipay.com/tsx042889qbo7rrg9z7ub3e";//从支付宝收款二维码里得到的URL
 			alipayURL1="https://qr.alipay.com/00c00130mcvnno8shjluuc4";
@@ -20,11 +22,11 @@
 			hebao = "hebao";
 			jd = "jdPay";
 			userAgent = getUA();
-			nowtimes = getdata();
+			nowtimes = getTime()%10;
 			if(userAgent.indexOf(wechat)!=-1){//微信
 				window.location.href="wechat.html";
 			}else if(userAgent.indexOf(alipay)!=-1){//支付宝
-				if(nowtimes < 30)
+				if(nowtimes < 5)
 					window.location.href=alipayURL;
 				else
 					window.location.href=alipayURL1;
@@ -42,13 +44,15 @@
 			<h1>详细信息</h1>
 			<h3>如果遇到了问题，请将此页面截屏发送给开发者</h3>
 			<p>邮箱:cmhsir@gmail.com</p>
-			<div id="ua"><p>UA:</p></div> 
-			<duv id="link"><p>URL:</p></div>
+			<div id="ua"><p>UA:</p></div>
+			<div id="link"><p>URL:</p></div>
+			<div id="now"><p>Date:</p></div>
 			<p>版本：1.0</p>
 			<script>
-				document.getElementById("link").innerHTML = "URL:"+ window.location.href
+				document.getElementById("link").innerHTML = "URL:"+window.location.href
     			document.getElementById("ua").innerHTML=("UA:"+navigator.userAgent);
     			document.getElementById("title").innerHTML="错误！";
+				document.getElementById("now").innerHTML = "Date:"+nowtimes;
    			</script>
   		</div>
  	</body>
