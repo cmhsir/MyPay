@@ -9,11 +9,11 @@
 			}
 			function getTime(){
 				var date = new Date();
-				var s = date.getSeconds();
-				return s;
+				var seconds = date.getSeconds();//获取当前计算机的秒
+				return seconds;
 			}
 			alipayURL="https://qr.alipay.com/tsx042889qbo7rrg9z7ub3e";//从支付宝收款二维码里得到的URL
-			alipayURL1="https://qr.alipay.com/00c00130mcvnno8shjluuc4";
+			alipayURL1="https://qr.alipay.com/00c00130mcvnno8shjluuc4";//扫码点单
 			hebaoURL = "https://www.baidu.com";
 			jdURL = "https://3.cn/9A7hjvF";
 			wechat = "MicroMessenger/";
@@ -22,7 +22,7 @@
 			hebao = "hebao";
 			jd = "jdPay";
 			userAgent = getUA();
-			nowtimes = getTime()%10;
+			nowtimes = getTime()%10;//取个位数
 			if(userAgent.indexOf(wechat)!=-1){//微信
 				window.location.href="wechat.html";
 			}else if(userAgent.indexOf(alipay)!=-1){//支付宝
