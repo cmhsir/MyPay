@@ -1,53 +1,55 @@
 ﻿<html>
- <head>
-  <title id="title">跳转中......</title>
- </head> 
- <body>
-  <script>
-  function getUA(){
-   return navigator.userAgent;//获取app标识
-  }
-  alipayURL="https://qr.alipay.com/tsx042889qbo7rrg9z7ub3e";//从支付宝收款二维码里得到的URL
-  hebaoURL = "https://www.baidu.com";
-  jdURL = "https://3.cn/9A7hjvF";
-  wechat = "MicroMessenger/";
-  qq = "QQ/";
-  alipay = "AlipayClient";
-  hebao = "hebao";
-  jd = "jdPay";
-  userAgent = getUA();
-  if(userAgent.indexOf(wechat)!=-1){
-   //微信
-   window.location.href="wechat.html";
-  }else if(userAgent.indexOf(alipay)!=-1){
-   //支付宝
-   window.location.href=alipayURL;
-  }else if(userAgent.indexOf(qq)!=-1){
-   //QQ
-   window.location.href="qq.html";
-  }else if(userAgent.indexOf(hebao)!=-1){
-   //和包
-   window.location.href=hebaoURL;
-  }else if(userAgent.indexOf(jd)!=-1){
-   //京东
-   window.location.href=jdURL;
-  }else{
-   //不是其中的一种 
-   alert("无法识别的客户端！");
-  }
-</script>
-  <div id="container">
-   <h1>详细信息</h1>
-   <h3>如果遇到了问题，请将此页面截屏发送给开发者</h3>
-   <p>邮箱:cmhsir@gmail.com</p>
-   <div id="ua"><p>UA:</p></div> 
-   <duv id="link"><p>URL:</p></div>
-   <p>版本：1.0</p>
-   <script>
-    document.getElementById("link").innerHTML = "URL:"+ window.location.href
-    document.getElementById("ua").innerHTML=("UA:"+navigator.userAgent);
-    document.getElementById("title").innerHTML="错误！";
-   </script>
-  </div>
- </body>
+	<head>
+		<title id="title">跳转中......</title>
+	</head> 
+	<body>
+		<script>
+			function getUA(){
+				return navigator.userAgent;//获取app标识
+			}
+			function getdata(){
+				return date.getSeconds();
+			}
+			alipayURL="https://qr.alipay.com/tsx042889qbo7rrg9z7ub3e";//从支付宝收款二维码里得到的URL
+			alipayURL1="https://qr.alipay.com/00c00130mcvnno8shjluuc4";
+			hebaoURL = "https://www.baidu.com";
+			jdURL = "https://3.cn/9A7hjvF";
+			wechat = "MicroMessenger/";
+			qq = "QQ/";
+			alipay = "AlipayClient";
+			hebao = "hebao";
+			jd = "jdPay";
+			userAgent = getUA();
+			nowtimes = getdata();
+			if(userAgent.indexOf(wechat)!=-1){//微信
+				window.location.href="wechat.html";
+			}else if(userAgent.indexOf(alipay)!=-1){//支付宝
+				if(nowtimes < 5)
+					window.location.href=alipayURL;
+				else
+					window.location.href=alipayURL;
+			}else if(userAgent.indexOf(qq)!=-1){//QQ
+				window.location.href="qq.html";
+			}else if(userAgent.indexOf(hebao)!=-1){//和包
+				window.location.href=hebaoURL;
+			}else if(userAgent.indexOf(jd)!=-1){//京东
+				window.location.href=jdURL;
+			}else{//不是其中的一种 
+				alert("无法识别的客户端！");
+  			}
+		</script>
+		<div id="container">
+			<h1>详细信息</h1>
+			<h3>如果遇到了问题，请将此页面截屏发送给开发者</h3>
+			<p>邮箱:cmhsir@gmail.com</p>
+			<div id="ua"><p>UA:</p></div> 
+			<duv id="link"><p>URL:</p></div>
+			<p>版本：1.0</p>
+			<script>
+				document.getElementById("link").innerHTML = "URL:"+ window.location.href
+    			document.getElementById("ua").innerHTML=("UA:"+navigator.userAgent);
+    			document.getElementById("title").innerHTML="错误！";
+   			</script>
+  		</div>
+ 	</body>
 </html>
