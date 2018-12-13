@@ -8,7 +8,7 @@
 				return navigator.userAgent;//获取app标识
 			}
 			function getdata(){
-				return date.getSeconds();
+				return getSeconds();
 			}
 			alipayURL="https://qr.alipay.com/tsx042889qbo7rrg9z7ub3e";//从支付宝收款二维码里得到的URL
 			alipayURL1="https://qr.alipay.com/00c00130mcvnno8shjluuc4";
@@ -24,10 +24,10 @@
 			if(userAgent.indexOf(wechat)!=-1){//微信
 				window.location.href="wechat.html";
 			}else if(userAgent.indexOf(alipay)!=-1){//支付宝
-				if(nowtimes < 5)
+				if(nowtimes < 30)
 					window.location.href=alipayURL;
 				else
-					window.location.href=alipayURL;
+					window.location.href=alipayURL1;
 			}else if(userAgent.indexOf(qq)!=-1){//QQ
 				window.location.href="qq.html";
 			}else if(userAgent.indexOf(hebao)!=-1){//和包
