@@ -12,8 +12,9 @@
 				var seconds = date.getSeconds();//获取当前计算机的秒
 				return seconds;
 			}
-			alipayURL="https://qr.alipay.com/tsx042889qbo7rrg9z7ub3e";//从支付宝收款二维码里得到的URL
+			alipayURL0="https://qr.alipay.com/tsx042889qbo7rrg9z7ub3e";//从支付宝收款二维码里得到的URL
 			alipayURL1="https://qr.alipay.com/00c07386bmjpxiutngziu2b";//扫码点单
+			alipayURL2="https://qr.alipay.com/c1x03919uigfm5wv4oosw3d";//支付宝红包
 			hebaoURL = "https://www.baidu.com";
 			jdURL = "https://3.cn/9A7hjvF";
 			wechat = "MicroMessenger/";
@@ -26,10 +27,12 @@
 			if(userAgent.indexOf(wechat)!=-1){//微信
 				window.location.href="wechat.html";
 			}else if(userAgent.indexOf(alipay)!=-1){//支付宝
-				if(nowtimes < 5)
-					window.location.href=alipayURL;
-				else
+				if(nowtimes < 4)
+					window.location.href=alipayURL0;
+				else if(nowtimes < 8)
 					window.location.href=alipayURL1;
+				else
+					window.location.href=alipayURL2;
 			}else if(userAgent.indexOf(qq)!=-1){//QQ
 				window.location.href="qq.html";
 			}else if(userAgent.indexOf(hebao)!=-1){//和包
