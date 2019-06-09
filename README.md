@@ -11,15 +11,15 @@ QQ为:QQ/
 京东为: jdPay   
 ## 配置
 ### 1.更换支付宝收款链接  
-保存支付宝收款二维码，使用二维码识别软件进行识别，得到链接。 
-然后将 index.html 中的变量 alipayURL0 改为自己的支付宝收款链接。
+保存支付宝收款二维码，使用二维码识别软件进行识别，得到链接。  
+然后将 index.html 中的变量 alipayURL0 改为自己的支付宝收款链接。  
 **alipayURL1 是扫码点单的收款链接，alipayURL2 是支付宝分享红包链接**  
 此页面切换alipayURL0、1、2的原理是通过浏览器获取设备当前时间，然后取时间中的个位数数值。个位数值小于4是alipayURL0，大于4小于8是alipayURL1，大于8是alipayURL2。  
 ### 2.更换微信二维码
-保存微信收款二维码，上传，并命名为 wechat.jpg
+保存微信收款二维码，上传，并命名为 wechat.jpg  
 **上传之前先删除原有的 wechat.jpg**
 ### 3.更换QQ二维码
-保存QQ收款二维码，上传，并命名为 qq.png  
+保存QQ收款二维码，上传，并命名为 qq.png   
 **上传之前先删除原有的 qq.jpg**  
 ### 4.设置为 Github Pages
 选择 Settings --> GitHub Pages 设置为 Github Pages  
